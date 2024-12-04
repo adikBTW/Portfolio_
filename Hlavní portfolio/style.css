@@ -399,17 +399,97 @@ footer p {
         font-size: 1.2rem;
     }
     .Mywork .tileR, .Mywork .tileG, .Mywork .tileB {
-        flex: 1 1 100%; /* Stack the tiles */
+        flex: 1 1 100%;
+    }
+    .tile
+    {
+        width:360px;
+        height:360px;}
+    .wrap {
+        flex-direction: column;
+    }
+    .wrap-portfolio {
+        flex-direction: column;
+    }
+    .menu {
+        text-transform: uppercase;
+        flex-direction: column;
+        background-color: rgb(0, 0, 0);
+        align-items: center;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        border-top: 2px solid rgba(242, 241, 249, 1);
+        padding-top: 15px;
+    }
+    .menu a {
+        margin-left: 12px;
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
     }
 }
 
-/* Medium screens (tablets) */
+
 @media (max-width: 1024px) {
     .home {
         flex-direction: column;
     }
     .Mywork .tileR, .Mywork .tileG, .Mywork .tileB {
-        flex: 1 1 calc(50% - 1rem); /* 2 per row */
+        flex: 1 1 calc(50% - 1rem);
+    }
+    .tile
+    {
+        width:360px;
+        height:360px;}
+    .wrap {
+        flex-direction: column;
+    }
+    .wrap-portfolio {
+        flex-direction: column;
+    }
+    .menu {
+        text-transform: uppercase;
+        flex-direction: column;
+        background-color: rgb(0, 0, 0);
+        align-items: center;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        border-top: 2px solid rgba(242, 241, 249, 1);
+        padding-top: 15px;
+    }
+    .menu a {
+        margin-left: 12px;
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
     }
 }
 
