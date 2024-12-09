@@ -17,12 +17,58 @@
           
         <nav class="menu">
             <a href="#Home" class="active"> Home</a>
-            <a href="#AboutMe" >About me</a>
-            <a href="#Skills" >Skills</a>
-            <a href="#Mywork" >My work</a>
-            <a href="#contact" >Contact</a>
         </nav>
 
     </header>
+    <section id="Home">
+        <div class="gallery">
+            <img src="https://via.placeholder.com/600x900?text=Image+1" alt="Image 1">
+            <img src="https://via.placeholder.com/600x900?text=Image+2" alt="Image 2">
+            <img src="https://via.placeholder.com/600x900?text=Image+3" alt="Image 3">
+            <img src="https://via.placeholder.com/600x900?text=Image+4" alt="Image 4">
+            <img src="https://via.placeholder.com/600x900?text=Image+5" alt="Image 5">
+            <img src="https://via.placeholder.com/600x900?text=Image+6" alt="Image 6">
+        </div>
+
+        <div class="modal" id="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <span class="arrow left" onclick="changeImage(-1)">&#10094;</span>
+            <img id="modalImg">
+            <span class="arrow right" onclick="changeImage(1)">&#10095;</span>
+        </div>
+
+    </section>
+
+    <script>
+        const images = document.querySelectorAll('.gallery img');
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modalImg');
+        let currentIndex = 0;
+    
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => openModal(index));
+        });
+    
+        function openModal(index) {
+            modal.style.display = 'flex';
+            modalImg.src = images[index].src;
+            currentIndex = index;
+        }
+    
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+    
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            modalImg.src = images[currentIndex].src;
+        }
+    
+        window.onclick = (e) => {
+            if (e.target === modal) closeModal();
+        };
+    </script>
 </body>
 </html>
