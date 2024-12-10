@@ -509,29 +509,31 @@ footer p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    padding: 20px;
 }
 
 .image-container {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    max-width: 200px; /* Set a maximum width for the image container */
-    margin: auto; /* Center the images */
+    max-width: 200px;
+    margin: auto;
 }
 
 .zoom-image {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
     transition: transform 0.3s ease;
 }
 
 .image-container:hover .zoom-image {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-.image-container:active .zoom-image {
+.image-container.active .zoom-image {
     transform: scale(1.2);
 }
+
 
 .overlay {
     position: absolute;
@@ -546,12 +548,9 @@ footer p {
     transition: opacity 0.3s ease;
 }
 
-.image-container:active .overlay {
-    opacity: 1;
-}
 
-.image-container img {
-    transition: transform 0.3s ease-in-out;
+.image-container.active .overlay {
+    opacity: 1;
 }
 
 .tileR, .tileG, .tileB {
@@ -584,45 +583,6 @@ footer {
 
 .contact-info a:hover {
     text-decoration: underline;
-}
-
-.burger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.line {
-    height: 3px;
-    width: 25px;
-    background-color: white;
-    margin: 3px 0;
-}
-
-@media (max-width: 995px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        background-color: #161616;
-        z-index: 1;
-        padding: 1rem;
-    }
-
-    .menu.active {
-        display: flex;
-    }
-
-    .burger {
-        display: flex;
-    }
-
-    nav a {
-        margin: 1rem 0;
-    }
 }
 
 .Skills h1{

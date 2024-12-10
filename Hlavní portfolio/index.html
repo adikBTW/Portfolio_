@@ -23,13 +23,13 @@
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
-        </div>  
-
-        <nav class="menu">
-            <a href="#Home" class="active"> Home</a>
-            <a href="#AboutMe" >About me</a>
-            <a href="#Skills" >Skills</a>
-            <a href="#Mywork" >My work</a>
+        </div>
+    
+        <nav class="menu" id="menu">
+            <a href="#Home" class="active">Home</a>
+            <a href="#AboutMe">About me</a>
+            <a href="#Skills">Skills</a>
+            <a href="#Mywork">My work</a>
         </nav>
 
     </header>
@@ -156,7 +156,7 @@
     stagger: 0.3,
     ease: "power3.out"
   });
-
+  
   gsap.from("#AboutMe h1, #AboutMe p", {
     duration: 1,
     y: 50,
@@ -225,8 +225,24 @@
 
     document.getElementById('burger').addEventListener('click', function() {
         const menu = document.querySelector('.menu');
-        menu.classList.toggle('active'); // Toggle the active class
+        menu.classList.toggle('active');
     });
+
+        const containers = document.querySelectorAll('.image-container');
+
+containers.forEach(container => {
+    container.addEventListener('click', () => {
+
+        container.classList.toggle('active');
+    });
+});
+
+document.addEventListener('click', (event) => {
+    if (!event.target.closest('.image-container')) {
+        containers.forEach(container => container.classList.remove('active'));
+    }
+});
+
     </script>
 
 </body>
